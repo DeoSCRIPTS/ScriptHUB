@@ -73,15 +73,33 @@ local webhookData = createWebhookData()
 sendWebhook(webhookUrl, webhookData)
 
 local player = game.Players.LocalPlayer
-loadstring(game:HttpGet("https://raw.githubusercontent.com/DeoSCRIPTS/ScriptHUB/refs/heads/main/Not%20Detected%20Game"))()
-if game.PlaceId == 10449761463 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/DeoSCRIPTS/ScriptHUB/refs/heads/main/TSB"))()
-elseif game.PlaceId == 2753915549 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/DeoSCRIPTS/ScriptHUB/refs/heads/main/Blox%20Fruits"))()
-elseif game.PlaceId == 4442272183 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/DeoSCRIPTS/ScriptHUB/refs/heads/main/Blox%20Fruits"))()
-elseif game.PlaceId == 7449423635 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/DeoSCRIPTS/ScriptHUB/refs/heads/main/Blox%20Fruits"))()
-else
-    print("Game Not Detected, Using INF Yield Instead")
+local whitelistedPlayers = {
+    "leedeo26",
+    "woof1192",
+    "c4rlen"
+}
+
+local playerName = player.Name
+local isWhitelisted = false
+
+for _, name in ipairs(whitelistedPlayers) do
+    if name == playerName then
+        isWhitelisted = true
+        break
+    end
 end
+
+if isWhitelisted then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/DeoSCRIPTS/ScriptHUB/refs/heads/main/Not%20Detected%20Game"))()
+    
+    if game.PlaceId == 10449761463 then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/DeoSCRIPTS/ScriptHUB/refs/heads/main/TSB"))()
+    elseif game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7449423635 then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/DeoSCRIPTS/ScriptHUB/refs/heads/main/Blox%20Fruits"))()
+    else
+        print("Game Not Detected, Using INF Yield Instead")
+    end
+else
+    player:Kick("You are not whitelisted.")
+end
+
