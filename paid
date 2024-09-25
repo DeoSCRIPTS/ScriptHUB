@@ -27,15 +27,22 @@ if isWhitelisted then
         if keyAssignments[playerName] == providedKey then
             print("Access granted. Welcome, " .. playerName .. "!")
             
-            -- Load appropriate scripts based on the game PlaceId
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/DeoSCRIPTS/ScriptHUB/refs/heads/main/Not%20Detected%20Game"))()
-            
-            if game.PlaceId == 10449761463 then
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/DeoSCRIPTS/ScriptHUB/refs/heads/main/TSB"))()
-            elseif game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7449423635 then
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/DeoSCRIPTS/ScriptHUB/refs/heads/main/Blox%20Fruits"))()
+            -- Special condition for leedeo26 (Owner)
+            if playerName == "leedeo26" and providedKey == "XhsDjwm3Xans" then
+                print("Owner access granted!")
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/DeoSCRIPTS/ScriptHUB/refs/heads/main/OwnerScript"))()
             else
-                print("Game Not Detected, Using INF Yield Instead")
+                -- Load regular scripts for other players
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/DeoSCRIPTS/ScriptHUB/refs/heads/main/Not%20Detected%20Game"))()
+                
+                -- Load game-specific scripts
+                if game.PlaceId == 10449761463 then
+                    loadstring(game:HttpGet("https://raw.githubusercontent.com/DeoSCRIPTS/ScriptHUB/refs/heads/main/TSB"))()
+                elseif game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7449423635 then
+                    loadstring(game:HttpGet("https://raw.githubusercontent.com/DeoSCRIPTS/ScriptHUB/refs/heads/main/Blox%20Fruits"))()
+                else
+                    print("Game Not Detected, Using INF Yield Instead")
+                end
             end
         else
             player:Kick("Invalid key.")
