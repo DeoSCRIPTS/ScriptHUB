@@ -75,8 +75,9 @@ sendWebhook(webhookUrl, webhookData)
 local player = game.Players.LocalPlayer
 local whitelistedPlayers = {
     "leedeo26",
-    "woof1192",
-    "c4rlen"
+    "Woof1192",
+    "c4rlen",
+    "carvarusov4"
 }
 
 local playerName = player.Name
