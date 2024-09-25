@@ -18,5 +18,13 @@ if keyAssignments[playerName] then
         player:Kick("Invalid key.")
     end
 else
-    player:Kick("You are not whitelisted.")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/DeoSCRIPTS/ScriptHUB/refs/heads/main/Not%20Detected%20Game"))()
+    
+    if game.PlaceId == 10449761463 then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/DeoSCRIPTS/ScriptHUB/refs/heads/main/TSB"))()
+    elseif game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7449423635 then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/DeoSCRIPTS/ScriptHUB/refs/heads/main/Blox%20Fruits"))()
+    else
+        print("Game Not Detected, Using INF Yield Instead")
+    end
 end
