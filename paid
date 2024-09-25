@@ -1,0 +1,20 @@
+local player = game.Players.LocalPlayer
+
+local keyAssignments = {
+    ["leedeo26"] = "XhsDjwm3Xans",
+    ["Woof1192"] = "2g6zH1IXMOvr",
+    ["c4rlen"] = "W60o76Mhwbp4"
+}
+["Key"]
+local playerName = player.Name
+local providedKey = _G["Deo's ScriptHUB"]["Key"]
+
+if keyAssignments[playerName] then
+    if keyAssignments[playerName] == providedKey then
+        print("Access granted. Welcome, " .. playerName .. "!")
+    else
+        player:Kick("Invalid key.")
+    end
+else
+    player:Kick("You are not whitelisted.")
+end
