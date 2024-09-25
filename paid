@@ -1,9 +1,3 @@
-_G["Deo's ScriptHUB"] = {
-    ["Owner / Author"] = "Deo",
-    ["Paid"] = true, -- Keep enabled
-    ["Key"] = "XhsDjwm3Xans" -- Replace if the provided key changes dynamically
-}
-
 local player = game.Players.LocalPlayer
 
 -- Key assignments for each player
