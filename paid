@@ -3,7 +3,7 @@ local player = game.Players.LocalPlayer
 -- Key assignments for each player
 local keyAssignments = {
     ["leedeo26"] = "XhsDjwm3Xans",
-    ["Woof1192"] = "2g6zH1IXMOvr",
+    ["Roblox"] = "2g6zH1IXMOvr",
     ["c4rlen"] = "W60o76Mhwbp4"
 }
 
