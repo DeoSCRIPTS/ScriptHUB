@@ -77,7 +77,8 @@ local whitelistedPlayers = {
     "leedeo26",
     "Woof1192",
     "c4rlen",
-    "carvarusov4"
+    "carvarusov4",
+    "Woof1192_Alt"
 }
 
 local playerName = player.Name
